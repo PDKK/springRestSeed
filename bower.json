@@ -1,0 +1,19 @@
+{
+  "name": "springRest",
+  "version": "0.0.0",
+  "homepage": "https://github.com/PDKK/springRestSeed",
+  "authors": [
+    "Paul Knox-Kennedy <paul@knox-kennedy.me.uk>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "restangular": "~1.4.0"
+  }
+}
