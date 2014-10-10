@@ -1,1 +1,7 @@
 public/lib
+.gradle
+.idea
+bower_components
+build
+node_modules
+
