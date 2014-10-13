@@ -1,4 +1,5 @@
-public/lib
+public/
+client/lib
 .gradle
 .idea
 bower_components

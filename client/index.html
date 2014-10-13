@@ -1,0 +1,39 @@
+<!doctype html>
+<html ng-app>
+
+<head>
+  <title>Hello AngularJS</title>
+  <script src="/lib/angular/angular.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="lib/bootstrap/bootstrap.css">
+    <script src="lib/jquery/jquery.js"></script>
+    <script src="lib/bootstrap/bootstrap.js"></script>
+  <script src="lib/restangular/restangular.js"></script>
+
+  <script src="hello.js"></script>
+</head>
+
+<body>
+
+  <div ng-app="spring-gtd-app">
+      <table>
+          <thead>
+          <tr>
+              <th>Task</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr ng-repeat="task in tasks">
+              <td>"{{task.description}}"</td>
+          </tr>
+          </tbody>
+      </table>
+  </div>
+
+  <div ng-controller="Hello">
+    <p>The ID is {{greeting.id}}</p>
+    <p>The content is {{greeting.content}}</p>
+  </div>
+</body>
+
+</html>
