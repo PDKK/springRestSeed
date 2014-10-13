@@ -1,15 +1,13 @@
-angular.module('spring-gtd-app', ['restangular']).
-  config(function ($routeProvider, RestangularProvider) {
-    $routeProvider.
-      when('/', {
-        controller:ListCtrl,
-      });
-      RestangularProvider.setBaseUrl('tasks');
+angular.module('spring-gtd-app', ['ngResource','hateoas']).
+  config(function (HateoasInterceptorProvider ) {
+    HateoasInterceptorProvider.transformAllResponses();
   });
 
 
-function ListCtrl($scope, Restangular) {
-   $scope.projects = Restangular.all("tasks").getList().$object;
+function ListCtrl($scope, $resource) {
+    $scope.tasks = $resource("/tasks").query(null, function() {
+
+    });
 }
 
 
