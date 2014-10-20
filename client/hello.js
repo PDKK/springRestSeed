@@ -1,14 +1,16 @@
-angular.module('spring-gtd-app', ['ngResource','hateoas']).
-  config(function (HateoasInterceptorProvider ) {
-    HateoasInterceptorProvider.transformAllResponses();
-  });
+app = angular.module('spring-gtd-app', ['ngResource','spring-data-rest']);
 
+app.controller('ListCtrl', ['$scope','$http','SpringDataRestAdapter',function($scope,$http,spa) {
+	$scope.message = "Hello World";
 
-function ListCtrl($scope, $resource) {
-    $scope.tasks = $resource("/tasks").query(null, function() {
+	// do something to get the data
+	$http.get("http://localhost:8080/tasks").success(function (resp) {
+		var processedResponse = new spa(resp);
+		$scope.tasks = processedResponse._embeddedItems; 
+	});
 
-    });
-}
+}]);
+
 
 
 function Hello($scope, $http) {
