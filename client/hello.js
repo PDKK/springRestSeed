@@ -1,3 +1,4 @@
+(function(){
 app = angular.module('spring-gtd-app', ['ngResource','spring-data-rest']);
 
 app.controller('ListCtrl', ['$scope','$http','SpringDataRestAdapter',function($scope,$http,spa) {
@@ -11,6 +12,7 @@ app.controller('ListCtrl', ['$scope','$http','SpringDataRestAdapter',function($s
 
 }]);
 
+}());
 
 
 function Hello($scope, $http) {
